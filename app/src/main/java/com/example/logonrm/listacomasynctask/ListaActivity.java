@@ -188,7 +188,10 @@ public class ListaActivity extends AppCompatActivity {
                 final Android android = mAdapter.getItem(position);
                 Intent i = new Intent(ListaActivity.this, DetalheActivity.class);
                 i.putExtra(Android.TAG_NOME, android.getNome());
-                startActivity(i);
+                i.putExtra(Android.TAG_API, android.getApi());
+				i.putExtra(Android.TAG_VERSAO, android.getVersao());
+				i.putExtra(Android.TAG_URL_IMAGEM, android.getUrlImagem());
+				startActivity(i);
 
             }
         });
